@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+<!--
+  <link rel="stylesheet" type="text/css" href="css/main.css" /> 
+  <link id="link_chcolor" rel="stylesheet" type="text/css" href="css/color_grey.css" /> 
+  <link rel="icon" href="favicon.ico">  
+-->
+<!--  Путь к файлам саий из шаблона Flask -->
+  <link rel="stylesheet" type="text/css" href="static/css/main.css" /> 
+  <link id="link_chcolor" rel="stylesheet" type="text/css" href="static/css/color_grey.css" /> 
+  <link rel="icon" href="static/favicon.ico">
+  
+  <title>PostgreSQL2021</title>
+  <!--  ПОДКЛЮЧЕНИЕ БИБЛИОТЕКИ Highligt.JS  -->
+<!--  Путь к файлам саий из шаблона Flask -->
+  <link rel="stylesheet" href="static/css/higligt_gml.css">
+  <link rel="preload" href="static/static/js/highlight.pack.js" as="script">
+  <script src="static/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+  <!-- === НАЧАЛО Контейнера сайта ============= -->
+  <div class="cont-site">
+    <!-- ======= ЗАГОЛОВОК = логотип + другое ========  -->
+    <header>
+      <h1>ЛОГОТИП</h1>
+      <!--  Блок управления сайтом   -->
+      <div id="site-control">
+        <!-- ТАБЛИЦА ВЫБОР цвета сайта и МЕНЮ лево-право  -->
+        <table class="color_scheme">
+          <tr><th colspan="3">
+              <input type="radio" name='sd-place' id="left" checked="checked">&lt;&lt; Меню &gt;&gt;
+              <input type="radio" name='sd-place' id="right">
+          </th></tr>
+          <tr> <!-- Строка с цветными прямоугольниками для выбор   а цвета сайта -->
+            <td id="color_grey">&nbsp;</td>
+            <td id="color_brown">&nbsp;</td>
+            <td id="color_night">&nbsp;</td>
+          </tr>
+        </table> <!-- КОНЕЦ выбора тонов на сайте -->
+      </div>
+    </header> <!-- КОНЕЦ ЗАГОЛОВКА   -->
+    
+    <!-- ГЛАВНОЕ  МЕНЮ  сделано в 2020 -->
+    <div id="m-menu">
+      <span class="item">CSS</span> <!-- Пункт меню -->
+      <span class='pipe'></span>    <!-- Разделитель пунктов меню  -->
+      <span class="item">JavaScript</span><span class='pipe'></span>
+      <span class="item">Профессии WEBa</span><span class='pipe'></span>
+      <span class="item">Профессии WEBa</span><span class='pipe'></span>
+      <span class="item">Верстка сайтов</span>
+    </div>
+    
+    <!-- НАЧАЛО 3-колоночной верстки -->
+    <div class="main">
+      <!-- НАЧАЛО saidbar -->
+      <aside>
+        <h3>sidebar</h3>
+
+        <br><a href="{{url_for('integrity')}}" target="_blank">1. Целостность БД.</a>
+        <br><a href="{{url_for('terms')}}" target="_blank">2. Термины концептуального моделирования.</a>
+        
+        <p>
+          
+          Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
+        </p>
+
+      </aside> <!-- КОНЕЦ saidbar -->
+      
+      <!-- НАЧАЛО СТАТЬИ - СРЕДНЯЯ ЧАСТЬ СТРАНИЦЫ  -->
+      <article>
+        
+        <!--  2020 ОГЛАВЛЕНИЕ СТРАНИЦЫ      -->
+        <div id="toc-main"> <!-- Контейнер оглавления страницы -->
+          <h4 id="toc-h4"><a href="#site-control">Оглавление страницы:</a></h4> <!-- Якорь на самый ввех страницы -->
+          <ol id="toc-ol" class="list-1"> <!-- Нумерованный список для добавления строк списка из js -->
+          </ol>
+        </div>
+        <!-- Маленькое оглавление страницы -->
+        <div id="toc-small">
+          <!--<span>.</span>  Чтобы высота содержимого зависела от шрифта-->
+          <span class="triangle-down"></span>
+        </div>
+        <!--   КОНЕЦ ОГЛАВЛЕНИЯ СТРАНИЦЫ     -->
+        
+<!--  !!!! ============ НАЧАЛО ВКЛЮЧАЕМОГО БЛОКА СТАТЬИ !!!! ===================================================      -->
+        {% block article %}
+            {{article | safe}}
+        {% endblock %}  
+        
+<!--  !!!! ============ КОНЕЦ  ВКЛЮЧАЕМОГО БЛОКА СТАТЬИ !!!! ===================================================      -->
+      
+      </article> <!-- КОНЕЦ СТАТЬИ -->
+      
+      <!-- КОЛОНКА  РЕКЛАМЫ  -->
+      <div class="ad">
+        <h4> РЕКЛАМНЫЙ БЛОК </h4>
+        
+      </div>
+    </div> <!-- КОНЕЦ 3 колоночной верстки  -->
+    <footer> ФУТЕР </footer>
+  </div> <!-- КОНЕЦ Контейнера сайта -->
+  
+  <!-- Подключаем библиотеку jQuery    -->
+  <script src="static/js/jquery-3.4.1.min.js"></script>
+<!--  <script src="js/jquery-ui.js"></script>-->
+  <!-- СКРИПТ для работы jQuery UI в мобильных устройствах (tauch pad)  -->
+<!--  <script src="js/jquery.ui.touch-punch.min.js"></script>-->
+  
+  <!-- !!! ПОСЛЕ jQuery. ===== МОДУЛЬ НУМЕРАЦИИ ОГЛАВЛЕНИЙ разделов СКРИПТ 2020 -  -->
+  <script>
+    // ===== МОДУЛЬ НУМЕРАЦИИ ОГЛАВЛЕНИЙ разделов ===== 
+    /*  Нумеруем имена разделов + Создаем ссылки на разделы
+     * Описание ВСЕГО МОДУЛЯ в 
+     * D:\w10_КОНСПЕКТЫ_w7\САЙТ МОЙ 2020\МОДУЛИ  КОНСПЕКТЫ\Сайт оглавление страницы КОНСПЕКТ.doc
+     * !!!! ОБЯЗАТЕЛЬНО РАСПОЛОЖЕНИЕ функции ЗДЕСЬ в body (в теле страницы), 
+     * ИНАЧЕ после загрузки всей страницы, ПРОБЛЕМА:
+     *  если в адресной строке есть якорь ТО не произойдет переход к разделу страницы т.к еще не будет идентификатора.
+     *  ОБРАБАТЫВАЕМ имена абзацев (h4) И СОЗДАЕМ имена разделов с атрибутами в оглавлении страницы.
+    */
+    let num = 1; // Создаем счетчик количества разделов страницы.
+    let ol = $("#toc-ol"); // Получаем НАЧАЛО нумерованного списка.
+    $('.toc_h').map(function(indx) {  // Выбираем на загруженной стренице ВСЕ имена разделов (абзацев).
+        let elem = $(this); // Получаем текущий элемент из НАБОРА ВЫБРАННЫХ элементов.
+        let old_text = elem.text(); // Записываем старый текст
+        let new_text = num + '. ' + old_text; // Добавляем к тексту номер по порядку.
+        
+        // Изменяем  наименование раздела страницы + записываем идентификатор
+        elem.text(new_text); // Записываем новый текст - уже с номером.
+        let id_num = "toc_" + num; // Создаем имя идентификатора .
+        elem.attr("id", id_num);   // Записываем идентификатор в тэг.
+        
+        // Создаем элемент списка меню оглавления.
+        new_li = "<li><a href='#" + id_num + "'>" + old_text + "</a></li>";
+        ol.append(new_li);
+        
+        num = num + 1; // Увеличиваем счетчик на 1
+    });
+  </script>
+  
+  <script src="static/js/main.js"></script> <!-- ГЛАВНЫЙ СКРИПТ -->
+   <!-- <script src="js/exercise.js"></script>Скрипт УПРАЖНЕНИЯ -->
+</body>
+</html>
+
+

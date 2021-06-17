@@ -1,0 +1,101 @@
+/*
+
+GML Theme - Meseta <meseta@gmail.com>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #222222; /* Цвет фона. Исходно #222222*/
+  color: #C0C0C0;
+}
+
+.hljs-keyword {
+  color: #FFB871;
+  font-weight: bold;
+}
+
+.hljs-built_in {
+  color: #FFB871;
+}
+
+.hljs-literal {
+  color: #FF8080;
+}
+
+.hljs-symbol {
+  color: #58E55A;
+}
+
+.hljs-comment {
+  color: #5B995B;
+}
+
+.hljs-string {
+  color: #FFFF00;
+}
+
+.hljs-number {
+  color: #FF8080;
+}
+
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-doctag,
+.hljs-name,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition,
+.hljs-regexp,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-type,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion,
+.hljs-title,
+.hljs-section,
+.hljs-function,
+.hljs-meta-keyword,
+.hljs-meta,
+.hljs-subst {
+  color: #C0C0C0;  /* Цвет типа данных ТАКЖЕ. Исходно #C0C0C0 */
+}
+
+
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* ---- Моя проба ПЕРЕОПРЕДЕЛИТЬ - ПОЛУЧИЛОСЬ ------- */
+
+.hljs {
+  background: #526799;  /* Цвет фона блока Исходно #222222*/
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+/* Цвет типа данных. Исходно #C0C0C0 */
+.hljs-type {color: white;}
+
+.hljs-comment {
+  font-style: oblique;
+/*  color: #8CC4C4;*/
+  color: #A69ACE;
+}
+.hljs-number {  color: #2EB0B6; }
+pre {  margin: 0;   padding: 0; }
+
+/* --- Конец пробы  ---------------------------------- */
