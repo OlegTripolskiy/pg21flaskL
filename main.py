@@ -7,7 +7,7 @@ app = Flask(__name__)	# Создаем новое web-приложение
 # имя модуля (пакета) в котором расположен   этот класс.
  	    # Иначе Flask не знает где искать шаблоны, статистические файлы и т.д.
 @app.route("/")
-def index():
+def index():  #  эта функция получает статьи из БД и через переменную включает в шаблон сайта layout.html. 
 #    return "Hello, world!"
     # Соединяемся с БД.
     con = psycopg2.connect(
@@ -28,19 +28,16 @@ def index():
         
     con.close()
     
-
-
 @app.route("/layout.html")
-def layout():
-#    return url_for('layout')
+def layout(): #  эта функция вызывает шаблон сайта 
     return render_template("layout.html")
 
 @app.route("/integrity.html")
-def integrity():		#  эта функция вернет в тэг <body> браузера слова Hello World!
+def integrity():		#  эта функция вызывает статью "Целостность БД." и которая наследует шаблон layout.
     return render_template("integrity.html")
 
 @app.route("/terms.html")
-def terms():		#  эта функция вернет в тэг <body> браузера слова Hello World!
+def terms():		#  эта функция вызывает статью "Термины при моделировании БД." и которая наследует шаблон layout.
     return render_template("terms.html")
 #	return "Hello, world! "
 #@app.route("/index")
