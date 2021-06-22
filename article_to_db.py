@@ -1,8 +1,8 @@
 import psycopg2
 
-with open("/home/student/pg21flaskL/templates/terms1.html") as file:
+with open("/home/student/pg21flaskL/templates/terms.html") as file:
     text_file = file.read()
-    print(text_file)
+#    print(text_file)
     
     # Соединяемся с БД.
     con = psycopg2.connect(
