@@ -9,9 +9,9 @@ GML Theme - Meseta <meseta@gmail.com>
   overflow-x: auto;
   padding: 0.5em;
   background: #222222; /* Цвет фона. Исходно #222222*/
-  color: #C0C0C0;
+  color: #C0C0C0;  /* цвет разных скобок + ИМЕНА полей и перем*/
 }
-
+/*  Цвет ключевых слов: function, CREATE TABLE, ... */
 .hljs-keyword {
   color: #FFB871;
   font-weight: bold;
@@ -40,11 +40,11 @@ GML Theme - Meseta <meseta@gmail.com>
 .hljs-number {
   color: #FF8080;
 }
-
+/**/
 .hljs-attribute,
 .hljs-selector-tag,
 .hljs-doctag,
-.hljs-name,
+.hljs-name,   /* p, body, ... */
 .hljs-bullet,
 .hljs-code,
 .hljs-addition,
@@ -68,19 +68,14 @@ GML Theme - Meseta <meseta@gmail.com>
 .hljs-subst {
   color: #C0C0C0;  /* Цвет типа данных ТАКЖЕ. Исходно #C0C0C0 */
 }
-
-
-
 .hljs-emphasis {
   font-style: italic;
 }
-
 .hljs-strong {
   font-weight: bold;
 }
 
 /* ---- Моя проба ПЕРЕОПРЕДЕЛИТЬ - ПОЛУЧИЛОСЬ ------- */
-
 .hljs {
   background: #526799;  /* Цвет фона блока Исходно #222222*/
   padding-bottom: 0;
@@ -90,12 +85,52 @@ GML Theme - Meseta <meseta@gmail.com>
 /* Цвет типа данных. Исходно #C0C0C0 */
 .hljs-type {color: white;}
 
-.hljs-comment {
+.hljs-comment {   /* Комментарии */
   font-style: oblique;
 /*  color: #8CC4C4;*/
   color: #A69ACE;
+  color: #98A8CC;
+  color: #8CC4C4;
+  color: #78C4C4;
+  color: #98A8CC;
+  font-size: 0.8em;
 }
-.hljs-number {  color: #2EB0B6; }
+.hljs-number {  color: #2EB0B6; } /* числа */
 pre {  margin: 0;   padding: 0; }
+
+/* --- СТИЛЬ для CSS кода --- */
+.hljs-selector-id,    /* CSS: идентификатор */
+.hljs-selector-class, /* CSS: класс */
+.hljs-selector-tag {  /* CSS: тэг HTML */
+  color: #FFB57D; 
+}
+.hljs-attribute {   /* CSS: атрибут свойства  */
+  color: #E4D06E;
+}
+/* --- Конец СТИЛЬ для CSS кода --- */
+
+.hljs-tag {   /* цвет угловых скобок + атрибуты тэгов */
+/*  color: red;*/
+}
+
+/* === НЕ ПОНЯЛ чей цвет ======= */
+.hljs-selector-attr {   /* атрибут селекторв ? */
+/*  color: red; */
+}
+
+hljs-selector-tag {
+/*  color: red; */
+  }
+
+.hljs-selector-pseudo {
+/*  color: #FFB57D; */
+  }
+.hljs-function {    /* Цвет функции? -  */
+/*  color: #428989;*/
+}
+.hljs-code {  /* Чей код ?*/
+/*  color: red; */
+}
+
 
 /* --- Конец пробы  ---------------------------------- */

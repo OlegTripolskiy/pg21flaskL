@@ -39,6 +39,11 @@ def integrity():		#  эта функция вызывает статью "Цел
 @app.route("/terms.html")
 def terms():		#  эта функция вызывает статью "Термины при моделировании БД." и которая наследует шаблон layout.
     return render_template("terms.html")
+
+@app.route("/highlight.html")
+def highlight():
+    return render_template("highlight.html")
+
 #	return "Hello, world! "
 #@app.route("/index")
 # @ - декоратор - вызываем функцию (метод) route() расположенную в экземпляре app класса Flask. 
