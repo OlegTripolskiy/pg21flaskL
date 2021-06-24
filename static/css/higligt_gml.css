@@ -88,11 +88,7 @@ GML Theme - Meseta <meseta@gmail.com>
 .hljs-comment {   /* Комментарии */
   font-style: oblique;
 /*  color: #8CC4C4;*/
-  color: #A69ACE;
-  color: #98A8CC;
-  color: #8CC4C4;
-  color: #78C4C4;
-  color: #98A8CC;
+  color: #D6B7E5;
   font-size: 0.8em;
 }
 .hljs-number {  color: #2EB0B6; } /* числа */
@@ -104,14 +100,25 @@ pre {  margin: 0;   padding: 0; }
 .hljs-selector-tag {  /* CSS: тэг HTML */
   color: #FFB57D; 
 }
-.hljs-attribute {   /* CSS: атрибут свойства  */
+.hljs-attribute {   /* CSS: значение атрибута свойства  */
   color: #E4D06E;
 }
 /* --- Конец СТИЛЬ для CSS кода --- */
 
+/* --- СТИЛЬ для HTML кода --- */
+
 .hljs-tag {   /* цвет угловых скобок + атрибуты тэгов */
 /*  color: red;*/
 }
+.hljs-attr {  /* атрибут HTML тэга */
+  color: #E4D06E;
+}
+.hljs-name {  /* Имена тэгов HTML */
+  color: #FFB57D;  /*  */
+}
+/* --- Конец СТИЛЬ для HTML кода --- */
+
+
 
 /* === НЕ ПОНЯЛ чей цвет ======= */
 .hljs-selector-attr {   /* атрибут селекторв ? */

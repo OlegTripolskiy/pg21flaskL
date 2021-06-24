@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+  {% block article %}
+<!-- СТИЛИ    -->
+<style>
+  /* Это временный CSS-файл для формы кода HTML d текст*/
+  #codeHTML {
+    width: 80%;
+    height: 200px;
+    border: 1px solid red;
+    color: #BFBDBC;
+    background-color: #453E50;
+  }
+  #do {
+    color: #BFBDBC;
+    background-color: #453E50;
+  }
+
+</style>
+
+  <h3>Преобразум HTML-код для расцвечивания.</h3>
+
+  <input type="text" 
+         id="codeHTML" 
+         autofocus 
+         placeholder="Сюда надо поместить код HTML."
+         />
+  <br>
+  <input type="button" id="do" value="Преобразовать код" />
+  
+  <script>
+//    alert('ok);
+      $('#do').click(function() {alert('OK')});
+  </script>
+
+  {% endblock %}

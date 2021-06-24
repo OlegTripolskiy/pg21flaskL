@@ -157,7 +157,8 @@ $("document").ready(function () {
 
     // --- УПРАВЛЕНИЕ блоком показ кода SQL ----
     $(".wrap-change").click(function () {
-        // В HTML коде заголовок блока (class="codeSQL-title") и блок с кодом (class="codeSQL-pre") должны СТРОГО следовать друг за другом.
+        // В HTML коде заголовок блока (class="codeSQL-title")
+        // и блок с кодом (class="codeSQL-pre") должны СТРОГО следовать друг за другом.
         let wr = $(this); // Получаем ссылку на текущий элемент.
         let wrap = wr.parent().next();  // получаем ссылку на следующий элемент
         if (wrap.css("white-space") == 'pre') {
@@ -168,7 +169,6 @@ $("document").ready(function () {
             $(this).text('pre-wrap');
         }
     }); // --- Конец click
-  
 
 }); // -- Конец $("document").ready(function ()
 

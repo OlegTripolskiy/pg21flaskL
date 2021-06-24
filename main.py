@@ -44,6 +44,10 @@ def terms():		#  эта функция вызывает статью "Терми
 def highlight():
     return render_template("highlight.html")
 
+@app.route("/code_to.html")
+def code_to():
+    return render_template("code_to.html")  
+
 #	return "Hello, world! "
 #@app.route("/index")
 # @ - декоратор - вызываем функцию (метод) route() расположенную в экземпляре app класса Flask. 

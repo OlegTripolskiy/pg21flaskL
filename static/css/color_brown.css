@@ -50,7 +50,7 @@ article {/* --- ОСНОВНАЯ (средняя) ЧАСТЬ сайта */
   background-color: #F9F2DB; /* Цвет средней части сайата */
 } 
 .ad { /* --- КОЛОНКА ДЛЯ РЕКЛАМЫ */
-  background-color: #F9EFD0;   /* Ton фона */
+  background-color: grey;   /* Ton фона */
 }
 footer { /* --- ПОДВАЛ */
   background-color: #B6AF98; /* Цвет фона футера */
