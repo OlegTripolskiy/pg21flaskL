@@ -7,22 +7,16 @@
   <h4 class='toc_h'><strong>код HTML</strong></h4>
   <p>
   </p>
+<!--  -->
+<br><!-- РАСЦВЕЧИВАНИЕ HTML, XML  -->
+<div class="highlighte-code"> <!--Блок для расцвеченного кода -->
+  <div><input type="button" value="Скопировать код" /></div>
+<pre><code class="language-xml hljs">
 
-<br>
-<pre><code class="language-xml hljs my">
-&lt;title&gt;Title&lt;/title&gt;
 
-&lt;style&gt;body {width: 500px;}&lt;/style&gt;
-
-&lt;script type=&quot;application/javascript&quot;&gt;
-  function $init() {return true;}
-&lt;/script&gt;
-
-&lt;body&gt;
-  &lt;p checked class=&quot;title&quot; id=&#39;title&#39;&gt;Title&lt;/p&gt;
-  &lt;!-- here goes the rest of the page --&gt;
-&lt;/body&gt;
 </code></pre>
+</div><!-- Конец. Блок для расцвеченного кода -->
+
 <br>   
 <!-- === КОНЕЦ ПАРАГРАФА  кода HTML. =============================== -->
 
@@ -30,14 +24,9 @@
   <h4 class='toc_h'><strong>код CSS</strong></h4>
   <p>
   </p>
-<br>   
+<br>   <!-- РАСЦВЕЧИВАНИЕ CSS  -->
 <pre><code class="language-css hljs my">
-/* --- 20.01.   Цвета главных разделов:  ---- */
-html {color: #808080;} /* Цвет шрифта сайта */
-.cont-site {
-  background-color: #F3E6BD; /* Фоновый цвет сайта*/
-}  
-div {background-color: #F3E6BD; /* Фоновый цвет сайта*/}
+
 </code></pre>
 <br>   
 <!-- === КОНЕЦ ПАРАГРАФА  кода CSS. =============================== -->
@@ -46,51 +35,18 @@ div {background-color: #F3E6BD; /* Фоновый цвет сайта*/}
   <h4 class='toc_h'><strong>код JS </strong></h4>
   <p>
   </p>
-<br>   
-<pre><code class="language-javascript  hljs my">
-    // --- ЗАПИСЬ КУКИ. Функци, записывающая куки -------------------
-    function setCookie(name, value, daysToLive) {
-        // Сохраняет пару имя/значение в виде cookie, кодируя значение с помощью
-        // encodeURIComponent(), чтобы экранировать точки с запятой, запятые и пробелы.
-        let cookie = name + "=" + encodeURIComponent(value);
-        // Если в параметре daysToLive передается число, атрибут max-age
-        // устанавливается так, что срок хранения cookie истекает через
-        // указанное число дней. Если передать значение 0, cookie будет удален
-        if (typeof daysToLive === "number") {
-            cookie += "; max-age=" + (daysToLive * 60 * 60 * 24);
-        } else {
-            throw new Error('Параметр daysToLive должен быть числом.');
-        }
-        document.cookie = cookie;
-    } // --- Конец запись куки
+<br>   <!-- РАСЦВЕЧИВАНИЕ JAVASCRIPT  -->
+<pre><code class="language-javascript">
 
-    // Функция ЧТЕНИЯ  куки с конкретным именем.
-    // Источник: https://msiter.ru/tutorials/javascript/js_cookies
-    function getCookie(cname) {
-        let name = cname + "="; // Будем искать имя_куки=
-        let decodedCookie = decodeURIComponent(document.cookie); // Декодируем, чтобы обработать спец. символы
-        let ca = decodedCookie.split(';'); // Записываем в массив части (разделенные ;) декодированной строки
-        for ( let i = 0; i < ca.length; i += 1) { // JSLint не любит инкременты и деккременты, поэтому i += 1
-            let c = ca[i];
-            // Этот кусок мне ПОКА не понятен. ЕСЛИ его убрать ничего не меняется.
-            while (c.charAt(0) === ' ') {
-                c = c.substring(1);
-            }// --- Конец while непонятому
-            if (c.indexOf(name) === 0) { // Если имя куки начинается с самого начала
-                return c.substring(name.length, c.length); // получаем значение куки.
-            }
-        } // --- Конец чтения куки
-    } // === Конец ВСЕГО КУКИ ========================
 </code></pre>
 <br>   
-<!-- === КОНЕЦ ПАРАГРАФА  кода JS. =============================== -->
+<!-- === КОНЕЦ ПАРАГРАФА  кода JS. =============================== 
 
 <!-- === НАЧАЛО ПАРАГРАФA кода PostgreSQL. =============================== -->
   <h4 class='toc_h'><strong>код PostgreSQL</strong></h4>
-  <p>
-  </p>
-<br>   
-<pre><code class="language-pgsql hljs my">
+
+<br>   <!-- РАСЦВЕЧИВАНИЕ PostgreSQL  -->
+<pre><code class="language-pgsql hljs">
 INSERT INTO big100 
 SELECT  s.id, 'This is string # ' || s.id FROM generate_series(1, 100000) AS s(id);
 
@@ -120,6 +76,20 @@ SELECT * FROM pupils;
 <br>   
 <!-- === КОНЕЦ ПАРАГРАФА  кода PostgreSQL. =============================== -->
 
+<!-- === НАЧАЛО ПАРАГРАФA кода Python. =============================== -->
+  <h4 class='toc_h'><strong>код Python.</strong></h4>
+
+<br>   <!-- РАСЦВЕЧИВАНИЕ PostgreSQL  -->
+<div  class="highlight-code"> <!--Блок для преобразованного кода -->
+  <div><input type="button" value="Скопировать код" /></div>
+<pre><code id="code" class="language-python hljs">
+@app.route("/code_to.html")
+def code_to():
+    return render_template("code_to.html") 
+
+</code></pre>
+<br>   
+<!-- === КОНЕЦ ПАРАГРАФА  кода Python. =============================== -->
 
 <!-- ========== КОНЕЦ. МОДУЛЬ ДЛЯ РАСЦВЕИЧАНИЯ  КОДА ДЛЯ КОНСПЕКТОВ  ==============================  -->
   {% endblock %}

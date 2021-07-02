@@ -1,9 +1,5 @@
-/*
-
-GML Theme - Meseta <meseta@gmail.com>
-
-*/
-
+/* GML Theme - Meseta <meseta@gmail.com> */
+/* ---- 10. Стили модуля расцветки кода  --- эти стили расцвеыивают код */
 .hljs {
   display: block;
   overflow-x: auto;
@@ -76,10 +72,13 @@ GML Theme - Meseta <meseta@gmail.com>
 }
 
 /* ---- Моя проба ПЕРЕОПРЕДЕЛИТЬ - ПОЛУЧИЛОСЬ ------- */
-.hljs {
-  background: #526799;  /* Цвет фона блока Исходно #222222*/
+.hljs {   /* ---  Стили БЛОКА. --- */
+  background: #526799;  /* Цвет фона блока Исходно #222222* повторно в .my-highlight */
   padding-bottom: 0;
   padding-top: 0;
+  font-size: 1.2em;     /* Размер шрифта всего блока */
+  white-space: pre; /* Горизонтальная полоса прокрутки ЕСЛИ код не вмещается */
+  resize: vertical;     /* Пользователь может изменять размеры блока вертикально */
 }
 
 /* Цвет типа данных. Исходно #C0C0C0 */
@@ -87,9 +86,8 @@ GML Theme - Meseta <meseta@gmail.com>
 
 .hljs-comment {   /* Комментарии */
   font-style: oblique;
-/*  color: #8CC4C4;*/
   color: #D6B7E5;
-  font-size: 0.8em;
+  font-size: 0.85em;
 }
 .hljs-number {  color: #2EB0B6; } /* числа */
 pre {  margin: 0;   padding: 0; }
@@ -106,7 +104,6 @@ pre {  margin: 0;   padding: 0; }
 /* --- Конец СТИЛЬ для CSS кода --- */
 
 /* --- СТИЛЬ для HTML кода --- */
-
 .hljs-tag {   /* цвет угловых скобок + атрибуты тэгов */
 /*  color: red;*/
 }
@@ -138,6 +135,5 @@ hljs-selector-tag {
 .hljs-code {  /* Чей код ?*/
 /*  color: red; */
 }
-
 
 /* --- Конец пробы  ---------------------------------- */

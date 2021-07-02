@@ -169,6 +169,19 @@ $("document").ready(function () {
             $(this).text('pre-wrap');
         }
     }); // --- Конец click
+  
+    // 10. --- Копирование текста кода в хайлайтере в буфер обмена. ------------------------------
+    // ВНИМАНИЕ: д.б. выдержана структура тэгов HTML хайлайтеара.
+    // метод execCommand('copy') считается устаревшим, но взамен  пока  ничего  нет.
+    $('.highlight-code').click(function () {
+        let text = $(this).children().next().children();  // Получаем тэг <code>, путь: div-div-pre-code
+        let $tmp = $("<textarea>"); // Создаем элемент textarea, который поддерживает переносы.
+        $("body").append($tmp);  // Добавляем этот созданный элемент к странице.
+        $tmp.val(text.text()).select(); // Записываем в него содержимое элемента и выделяем его.
+        document.execCommand("copy");
+        $tmp.remove();
+    });
+  
 
 }); // -- Конец $("document").ready(function ()
 

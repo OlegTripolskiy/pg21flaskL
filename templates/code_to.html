@@ -1,35 +1,67 @@
 {% extends "layout.html" %}
   {% block article %}
-<!-- СТИЛИ    -->
+<!--  ====== Модуль 10-1. Преобразование HTML кода в спецпоследовательности. ========== -->
+<!-- ==== Мои  стили для этой страницы. ====   -->
 <style>
-  /* Это временный CSS-файл для формы кода HTML d текст*/
-  #codeHTML {
-    width: 80%;
-    height: 200px;
-    border: 1px solid red;
-    color: #BFBDBC;
-    background-color: #453E50;
-  }
+.my-highlight { /* СТИЛЬ для модуля ПРЕОБРАЗОВАНИЕ КОДА */
+  background-color: #526799;  /* цвет дублируется и взят у стиля hljs из файла highlight_gml */
+  font-size: 1.0em; 
+  font-family: Consolas, Monaco, monospace;
+  width: 98%;
+  white-space: pre; /* Горизонтальная полоса прокрутки ЕСЛИ код не вмещается */
+  resize: vertical;  /* Пользователь может изменять размеры блока вертикально */
+  min-height: 200px;
+  color: #C0C0C0;
+}
+/* Кнопка "Преобразовать код" */
   #do {
     color: #BFBDBC;
     background-color: #453E50;
   }
-
 </style>
 
-  <h3>Преобразум HTML-код для расцвечивания.</h3>
-
-  <input type="text" 
-         id="codeHTML" 
-         autofocus 
-         placeholder="Сюда надо поместить код HTML."
-         />
+<!--  === Код HTML этой страницы === -->
+  <h3 class="toc_h">Преобразуем HTML-код для расцвечивания в спецпоследовательности.</h3>
   <br>
-  <input type="button" id="do" value="Преобразовать код" />
-  
+  <div>Вставьте HTML-код в окно.</div>
+  <!--Сюда вставлять код HTML для преобразования в escape-последовательности  -->
+  <textarea id='codeHTML' class="my-highlight"></textarea>
+
+  <!-- Кнопка ПРЕОБРАЗОВАТЬ КОД  -->
+  <br><input type="button" id="do" value="Преобразовать код" /> <!--  -->
+  <br><br>
+  <div>Здесь появится преобразованный код.</div>
+<div  class="highlight-code"> <!-- Блок для преобразованного кода -->
+  <div><input type="button" value="Скопировать код" /></div><!-- Заголовок блока -->
+  <pre><code id="code" class="language-xml hljs"><!-- Блок для кода -->
+
+
+  </code></pre>
+</div><!-- Конец. Блок для кода -->
+<!--  === КОНЕЦ. Код HTML этой страницы === -->
+
+<!-- СКРИПТ ДЛЯ ЭТОЙ СТРАНИЦЫ -->
   <script>
-//    alert('ok);
-      $('#do').click(function() {alert('OK')});
+    $("document").ready(function () { // НАЧАЛО document.ready
+    "use strict"; // Директива ECMAScript 5, ставим в начале сценария или функции
+    // --- Начало. Преобразовываем код HTML в спецпоследовательности. --------
+        $('#do').click(function() {
+            // Создаю объект с парой ключ значение
+            let symbols = {
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;'
+            };
+            // получаю весь код, введенный в textarea.
+            let str = $('#codeHTML').val();
+            // Перебираем объект, получая символ и спецпоследовательность для замены.
+            for (let key in symbols) {
+                let reg = new RegExp("" + key + "", "g");  // Создаем регулярное выражение с переменной.
+                str = str.replace(reg, symbols[key]);  // Изменяем значения в коде.
+            }
+            $('#code').text(str);
+        });// --- Конец. Преобразовываем код HTML в спецпоследовательности.
+   });  // ----- Конец document.ready
   </script>
 
   {% endblock %}
