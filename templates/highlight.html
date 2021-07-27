@@ -3,93 +3,111 @@
   
 <!-- ========== НАЧАЛО. МОДУЛЬ ДЛЯ РАСЦВЕИЧАНИЯ  КОДА ДЛЯ КОНСПЕКТОВ  ==============================  -->
 
+
 <!-- === НАЧАЛО ПАРАГРАФА кода HTML.  =============================== -->
   <h4 class='toc_h'><strong>код HTML</strong></h4>
   <p>
   </p>
 <!--  -->
-<br><!-- РАСЦВЕЧИВАНИЕ HTML, XML  -->
-<div class="highlighte-code"> <!--Блок для расцвеченного кода -->
-  <div><input type="button" value="Скопировать код" /></div>
+  <br><!-- РАСЦВЕЧИВАНИЕ HTML, XML  -->
+<div  class="highlight-code"> <!-- Блок для преобразованного кода -->
+  <div><input type="button" value="Скопировать код" /></div><!-- Заголовок блока -->
 <pre><code class="language-xml hljs">
+&lt;!DOCTYPE html&gt;
+&lt;title&gt;Title&lt;/title&gt;
 
+&lt;style&gt;body {width: 500px;}&lt;/style&gt;
+
+&lt;script type=&quot;application/javascript&quot;&gt;
+  function $init() {return true;}
+&lt;/script&gt;
 
 </code></pre>
 </div><!-- Конец. Блок для расцвеченного кода -->
 
-<br>   
+  <br>   
 <!-- === КОНЕЦ ПАРАГРАФА  кода HTML. =============================== -->
 
 <!-- === НАЧАЛО ПАРАГРАФA кода CSS. =============================== -->
   <h4 class='toc_h'><strong>код CSS</strong></h4>
-  <p>
-  </p>
-<br>   <!-- РАСЦВЕЧИВАНИЕ CSS  -->
+
+  <br>   <!-- РАСЦВЕЧИВАНИЕ CSS  -->
+<div  class="highlight-code"> <!-- Блок для преобразованного кода -->
+  <div><input type="button" value="Скопировать код" /></div><!-- Заголовок блока -->
 <pre><code class="language-css hljs my">
 
 </code></pre>
-<br>   
+  </div><!-- Конец. Блок для расцвеченного кода -->
+  <br>   
 <!-- === КОНЕЦ ПАРАГРАФА  кода CSS. =============================== -->
 
 <!-- === НАЧАЛО ПАРАГРАФA кода JS. =============================== -->
   <h4 class='toc_h'><strong>код JS </strong></h4>
   <p>
   </p>
-<br>   <!-- РАСЦВЕЧИВАНИЕ JAVASCRIPT  -->
+    <br>   <!-- РАСЦВЕЧИВАНИЕ JAVASCRIPT  -->
+<div  class="highlight-code"> <!-- Блок для преобразованного кода -->
+  <div><input type="button" value="Скопировать код" /></div><!-- Заголовок блока -->
 <pre><code class="language-javascript">
 
 </code></pre>
-<br>   
+  </div><!-- Конец. Блок для расцвеченного кода -->
+  <br>   
 <!-- === КОНЕЦ ПАРАГРАФА  кода JS. =============================== 
 
 <!-- === НАЧАЛО ПАРАГРАФA кода PostgreSQL. =============================== -->
   <h4 class='toc_h'><strong>код PostgreSQL</strong></h4>
-
-<br>   <!-- РАСЦВЕЧИВАНИЕ PostgreSQL  -->
+  <br> 
+<div  class="highlight-code"> <!-- Блок для преобразованного кода -->
+  <div><input type="button" value="Скопировать код" /></div><!-- Заголовок блока -->
 <pre><code class="language-pgsql hljs">
-INSERT INTO big100 
-SELECT  s.id, 'This is string # ' || s.id FROM generate_series(1, 100000) AS s(id);
 
-CREATE TABLE pupils (  
-    pid integer,    -- номер, тип данных: целое число
-    pname text,     -- фамилия, тип данных: текст
-    pburn date	    -- дата рождения, тип данных: дата
-);
-    
-INSERT INTO pupils  VALUES 
-    (1, 'Иванов',  '2010-03-25'),
-    (2, 'Петров',  '2011-08-14'),
-    (3, 'Сидоров', '2010-06-18')
-;
+<span class="user">postgres=#</span> 
+ db_id |  db_name  | db_size |  ts_name   | ts_size |        ts_path        
+-------+-----------+---------+------------+---------+-----------------------
+ 12328 | postgres  | 7046 kB | pg_default | 20 MB   | 
+     1 | template1 | 6929 kB | pg_default | 20 MB   | 
+ 12327 | template0 | 6929 kB | pg_default | 20 MB   | 
+ 24577 | appdb     | 6929 kB | ts         | 6933 kB | /home/postgres/ts_dir
+(4 rows)
 
-SELECT * FROM pupils;
--- ответ сервера
- pid |  pname  |    pburn    
------+---------+------------
-   1 | Иванов  | 2010-03-25
-   2 | Петров  | 2011-08-14
-   3 | Сидоров | 2010-06-18
-(3 rows)
 
 
 </code></pre>
-<br>   
+  </div>
+  <br>   
 <!-- === КОНЕЦ ПАРАГРАФА  кода PostgreSQL. =============================== -->
 
 <!-- === НАЧАЛО ПАРАГРАФA кода Python. =============================== -->
   <h4 class='toc_h'><strong>код Python.</strong></h4>
-
-<br>   <!-- РАСЦВЕЧИВАНИЕ PostgreSQL  -->
-<div  class="highlight-code"> <!--Блок для преобразованного кода -->
-  <div><input type="button" value="Скопировать код" /></div>
+  <br> 
+<div  class="highlight-code"> <!-- Блок для преобразованного кода -->
+  <div><input type="button" value="Скопировать код" /></div><!-- Заголовок блока -->
 <pre><code id="code" class="language-python hljs">
 @app.route("/code_to.html")
 def code_to():
     return render_template("code_to.html") 
 
 </code></pre>
+  </div>
 <br>   
 <!-- === КОНЕЦ ПАРАГРАФА  кода Python. =============================== -->
 
+<!-- === НАЧАЛО ПАРАГРАФA кода Bash . =============================== -->
+  <h4 class='toc_h'><strong>код Bash.</strong></h4>
+
+  <br>
+<div  class="highlight-code"> <!-- Блок для преобразованного кода -->
+  <div><input type="button" value="Скопировать код" /></div><!-- Заголовок блока -->
+<pre><code id="code" class="language-python hljs">
+
+<span class="user">postgres=#</span> 
+
+</code></pre>
+  </div>
+<br>   
+Lorem ipsum.
+<!-- === КОНЕЦ ПАРАГРАФА  кода Bash. =============================== -->
+  
 <!-- ========== КОНЕЦ. МОДУЛЬ ДЛЯ РАСЦВЕИЧАНИЯ  КОДА ДЛЯ КОНСПЕКТОВ  ==============================  -->
   {% endblock %}
